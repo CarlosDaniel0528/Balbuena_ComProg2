@@ -1,0 +1,53 @@
+drop DATABASE Hotel;
+create database Hotel;
+use Hotel;
+
+CREATE Table Hotels(
+    Hotel_id int PRIMARY KEY AUTO_INCREMENT,
+    Hotel_name varchar(15),
+    Hotel_type varchar(15),
+    Hotel_rent int,
+    Hotel_desc varchar(25),
+    Hotel_address varchar(15)
+);
+
+CREATE TABLE Rooms(
+	room_id int PRIMARY KEY AUTO_INCREMENT,
+    room_hotel_id int,
+    room_number int,
+    category varchar(15),
+    room_type varchar(15),
+    room_desc varchar(15)
+);
+
+CREATE TABLE Services(
+	service_id int PRIMARY KEY AUTO_INCREMENT,
+    service_hotel_id int,
+    service_name varchar(15),
+	service_type varchar(15),
+    service_desc varchar(15)
+);
+
+CREATE TABLE Payments(
+payment_id int PRIMARY KEY AUTO_INCREMENT,
+    payment_customer_id int,
+    payment_amount int,
+    payment_desc varchar(15)
+);
+
+CREATE TABLE Booking(
+	booking_id int PRIMARY KEY AUTO_INCREMENT,
+    booking_type varchar(15),
+    booking_date date,
+    booking_desc varchar(15)
+);
+
+CREATE TABLE Customers(
+customer_id int PRIMARY KEY AUTO_INCREMENT,
+customer_name varchar(15),
+    customer_contact int,
+    customer_email varchar(20),
+    customer_username varchar(10),
+    customer_paswword varchar(10),
+    customer_address varchar(15)
+);
